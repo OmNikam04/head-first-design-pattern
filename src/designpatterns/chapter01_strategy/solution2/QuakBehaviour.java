@@ -1,4 +1,5 @@
 package designpatterns.chapter01_strategy.solution2;
 
 public interface QuakBehaviour {
+    public void quak();
 }
