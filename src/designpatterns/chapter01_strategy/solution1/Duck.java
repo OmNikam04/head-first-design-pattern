@@ -1,4 +1,4 @@
-package designpatterns.chapter01_strategy;
+package designpatterns.chapter01_strategy.solution1;
 
 public class Duck {
 
