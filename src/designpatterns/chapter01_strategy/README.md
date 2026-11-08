@@ -26,3 +26,30 @@ it is behaviour class.
   2. Create concrete flying behaviors (like FlyWithWings or FlyNoWay).
   3. Give Duck an instance variable of type FlyBehavior.
   4. Initialize that behavior inside RedheadDuck's constructor
+- Program to an interface, not an implementation: Declare variable types as interface/abstract types 
+(e.g., FlyBehavior flyBehavior), not concrete implementations (e.g., FlyWithWings flyBehavior). 
+  - This decouples your client code from specific implementations.
+- Favor composition over inheritance: Has-a is better than Is-a. Building classes by composing them with behavior 
+objects makes systems far more flexible, maintainable, and dynamic than rigid class hierarchies.
+
+# Defination of strategy pattern:
+
+The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+Strategy lets the algorithm vary independently from clients that use it.
+
+# Key architecture and structure:
+
+```declarative
++-------------------+            +-------------------+
+|      Context      |  has-a     |     Strategy      | (Interface)
+|      (Duck)       |----------->|   (FlyBehavior)   |
++-------------------+            +-------------------+
+| + performFly()    |                      ^
++-------------------+                      |
+                                  +-----------------+-----------------+
+                                  |                                   |
+                       +-------------------+               +-------------------+
+                       | ConcreteStrategyA |               | ConcreteStrategyB |
+                       |  (FlyWithWings)   |               |    (FlyNoWay)     |
+                       +-------------------+               +-------------------+
+```
