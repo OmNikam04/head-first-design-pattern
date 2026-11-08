@@ -53,3 +53,19 @@ Strategy lets the algorithm vary independently from clients that use it.
                        |  (FlyWithWings)   |               |    (FlyNoWay)     |
                        +-------------------+               +-------------------+
 ```
+
+# Common LLD Interview Trap Questions & How to Answer
+1. "Why not just use Method Overriding in subclasses?"
+- If 10 out of 20 subclasses share the exact same behavior, overriding forces you to duplicate code across all 10
+- subclasses. If that behavior changes, you have to edit 10 files. Strategy lets all 10 subclasses share a single 
+- ConcreteStrategy class.
+
+2. "Can we change behaviors dynamically at runtime?"
+- Yes! Because the behavior is stored as a reference variable (FlyBehavior flyBehavior),
+- you can add a setter method in the Duck class (setFlyBehavior(FlyBehavior fb)). 
+- This lets an object change its behavior on the fly (e.g., a duck getting a rocket backpack mid-game).
+
+3. "What are the drawbacks of the Strategy Pattern?"
+- Increased number of classes: You create an interface and multiple implementation classes for every behavior.
+- Client awareness: The client (or factory) creating the context must be aware of the different strategies to 
+inject the right one.
